@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlas da Bondade · Kindness Atlas™ — Veja diariamente o melhor da humanidade</title>
+  <meta name="description" content="Uma plataforma global criada para descobrir, traduzir, compartilhar e incentivar a bondade humana.">
+  <meta name="theme-color" content="#2563EB">
+  <meta property="og:title" content="Kindness Atlas™ — Atlas da Bondade">
+  <meta property="og:description" content="Veja diariamente o melhor da humanidade.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- ÍCONES SVG (sprite) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#10B981"/>
+      </linearGradient>
+    </defs>
+    <symbol id="logo-mark" viewBox="0 0 48 48">
+      <rect width="48" height="48" rx="14" fill="url(#brandGrad)"/>
+      <g transform="translate(10 11) scale(1.17)"><path fill="#fff" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></g>
+      <g fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" opacity=".55"><path d="M24 17.2Q18.6 26 24 35.4"/><path d="M24 17.2Q29.4 26 24 35.4"/><path d="M13.4 23.6Q24 27.4 34.6 23.6"/></g>
+      <circle cx="37" cy="11" r="3.6" fill="#FBBF24"/>
+    </symbol>
+    <symbol id="flag-br" viewBox="0 0 28 20"><rect width="28" height="20" rx="3" fill="#169B62"/><path d="M14 2.6 25.4 10 14 17.4 2.6 10z" fill="#FBD20B"/><circle cx="14" cy="10" r="4.4" fill="#1E3A8A"/><path d="M9.8 9.2q4.2-1 8.4 1.4" stroke="#fff" stroke-width=".8" fill="none"/></symbol>
+    <symbol id="flag-jp" viewBox="0 0 28 20"><rect width="28" height="20" rx="3" fill="#fff" stroke="#E2E8F0"/><circle cx="14" cy="10" r="5.2" fill="#DC2626"/></symbol>
+    <symbol id="flag-ke" viewBox="0 0 28 20"><clipPath id="kc"><rect width="28" height="20" rx="3"/></clipPath><g clip-path="url(#kc)"><rect width="28" height="20" fill="#fff"/><rect width="28" height="6" fill="#111827"/><rect y="7.3" width="28" height="5.4" fill="#BB1E1E"/><rect y="14" width="28" height="6" fill="#00703C"/><ellipse cx="14" cy="10" rx="2.6" ry="5.4" fill="#BB1E1E" stroke="#111827" stroke-width=".8"/><path d="M14 5.2v9.6" stroke="#fff" stroke-width=".7"/></g></symbol>
+    <symbol id="flag-us" viewBox="0 0 28 20"><rect width="28" height="20" rx="3" fill="#fff"/><g fill="#B91C1C"><rect width="28" height="1.6" y="0"/><rect width="28" height="1.6" y="3.1"/><rect width="28" height="1.6" y="6.2"/><rect width="28" height="1.6" y="9.3"/><rect width="28" height="1.6" y="12.4"/><rect width="28" height="1.6" y="15.5"/><rect width="28" height="1.5" y="18.5"/></g><rect width="12" height="10.8" fill="#1E3A8A"/></symbol>
+
+    <g id="icons">
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M5 3v4M3 5h4M19 17v4M17 19h4"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-shield-alert" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4M12 16h.01"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+      <symbol id="i-face" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-nav" viewBox="0 0 24 24"><path d="M3 11 22 2l-9 19-2-8z"/></symbol>
+      <symbol id="i-landmark" viewBox="0 0 24 24"><path d="M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7M12 2l8 5H4z"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></symbol>
+      <symbol id="i-siren" viewBox="0 0 24 24"><path d="M7 18v-6a5 5 0 1 1 10 0v6"/><path d="M5 21a1 1 0 0 1-1-1v-1a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1z"/><path d="M21 12h1M18.5 4.5 18 5M2 12h1M12 2v1M4.93 4.93l.71.71"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36z"/></symbol>
+      <symbol id="i-archive" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="5" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8M10 12h4"/></symbol>
+      <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></symbol>
+      <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v7.4L4.6 19a2 2 0 0 0 1.7 3h11.4a2 2 0 0 0 1.7-3L14 10.4V3"/><path d="M6.5 15h11"/></symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+      <symbol id="i-grad" viewBox="0 0 24 24"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+      <symbol id="i-hands" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3M3 4h8"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="M11.5 2.3a.53.53 0 0 1 .95 0l2.31 4.68a2.12 2.12 0 0 0 1.6 1.16l5.16.76a.53.53 0 0 1 .3.9l-3.74 3.64a2.12 2.12 0 0 0-.61 1.88l.88 5.14a.53.53 0 0 1-.77.56l-4.62-2.43a2.12 2.12 0 0 0-1.97 0L6.4 21.01a.53.53 0 0 1-.77-.56l.88-5.14a2.12 2.12 0 0 0-.61-1.88L2.16 9.8a.53.53 0 0 1 .3-.9l5.16-.76a2.12 2.12 0 0 0 1.6-1.16z"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+      <symbol id="i-translate" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></symbol>
+      <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+      <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.54 21.69a.5.5 0 0 0 .94-.03l6.5-19a.5.5 0 0 0-.64-.64l-19 6.5a.5.5 0 0 0-.03.94l7.93 3.18a2 2 0 0 1 1.11 1.11z"/><path d="m21.85 2.15-10.94 10.94"/></symbol>
+      <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol>
+      <symbol id="i-quote" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.76-2.02-2-2H4c-1.25 0-2 .75-2 1.97V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .01-1 1.03V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.76-2.02-2-2h-4c-1.25 0-2 .75-2 1.97V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    </g>
+  </svg>
+
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- CABEÇALHO -->
+  <header class="header" id="header" data-testid="site-header">
+    <div class="container header__inner">
+      <a href="#top" class="brand" data-testid="header-logo-link" aria-label="Kindness Atlas">
+        <svg class="brand__mark"><use href="#logo-mark"/></svg>
+        <span class="brand__text">
+          <strong data-i18n="brand.name">Atlas da Bondade</strong>
+          <small data-i18n="brand.sub">Kindness Atlas™</small>
+        </span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="#missao" data-testid="nav-link-missao" data-i18n="nav.mission">Missão</a>
+        <a href="#feed" data-testid="nav-link-feed" data-i18n="nav.feed">Feed Positivo</a>
+        <a href="#mapa" data-testid="nav-link-mapa" data-i18n="nav.map">Mapa</a>
+        <a href="#ajude-agora" data-testid="nav-link-ajude" data-i18n="nav.help">Ajude Agora</a>
+        <a href="#premium" data-testid="nav-link-premium" data-i18n="nav.premium">Premium</a>
+      </nav>
+      <div class="header__actions">
+        <div class="lang" role="group" aria-label="Idioma / Language" data-testid="lang-switcher">
+          <button class="lang__btn" data-lang="pt" data-testid="lang-toggle-pt" aria-label="Português (Brasil)">
+            <svg class="flag"><use href="#flag-br"/></svg><span>PT</span>
+          </button>
+          <button class="lang__btn" data-lang="en" data-testid="lang-toggle-en" aria-label="English (US)">
+            <svg class="flag"><use href="#flag-us"/></svg><span>EN</span>
+          </button>
+        </div>
+        <button class="btn btn--primary btn--sm header__cta" data-open-modal="waitlist" data-testid="header-waitlist-btn">
+          <span data-i18n="cta.waitlistShort">Lista de Desejo</span>
+        </button>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" data-testid="mobile-menu-btn">
+          <svg class="i"><use href="#i-menu"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" data-testid="mobile-nav">
+      <a href="#missao" data-testid="mobile-nav-missao" data-i18n="nav.mission">Missão</a>
+      <a href="#feed" data-testid="mobile-nav-feed" data-i18n="nav.feed">Feed Positivo</a>
+      <a href="#mapa" data-testid="mobile-nav-mapa" data-i18n="nav.map">Mapa</a>
+      <a href="#ajude-agora" data-testid="mobile-nav-ajude" data-i18n="nav.help">Ajude Agora</a>
+      <a href="#premium" data-testid="mobile-nav-premium" data-i18n="nav.premium">Premium</a>
+      <button class="btn btn--primary" data-open-modal="waitlist" data-testid="mobile-nav-waitlist-btn"><span data-i18n="cta.waitlist">Entrar na Lista de Desejo</span></button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- 1. HERO -->
+    <section class="hero" id="hero" data-testid="hero-section">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="orb orb--blue"></span><span class="orb orb--green"></span><span class="orb orb--gold"></span>
+        <div class="hero__grid"></div>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow-pill load-fade" style="--d:.05s" data-testid="hero-eyebrow">
+            <span class="dot-live"></span><span data-i18n="hero.eyebrow">Lista de desejo aberta · Android</span>
+          </p>
+          <h1 class="hero__title" data-testid="hero-title">
+            <span class="line"><span style="--d:.15s" data-i18n="hero.l1">Veja diariamente</span></span>
+            <span class="line"><span style="--d:.28s" data-i18n="hero.l2">o melhor da</span></span>
+            <span class="line"><span class="grad-text" style="--d:.41s" data-i18n="hero.l3">humanidade.</span></span>
+          </h1>
+          <p class="hero__sub load-fade" style="--d:.7s" data-i18n="hero.sub" data-testid="hero-subtitle">Uma plataforma global criada para descobrir, traduzir, compartilhar e incentivar a bondade humana.</p>
+          <div class="hero__ctas load-fade" style="--d:.85s">
+            <button class="btn btn--primary btn--lg magnetic" data-open-modal="download" data-testid="hero-download-btn">
+              <svg class="i"><use href="#i-download"/></svg><span data-i18n="cta.download">Baixar Aplicativo</span>
+            </button>
+            <button class="btn btn--ghost btn--lg magnetic" data-open-modal="waitlist" data-testid="hero-waitlist-btn">
+              <span data-i18n="cta.waitlist">Entrar na Lista de Desejo</span><svg class="i"><use href="#i-arrow"/></svg>
+            </button>
+          </div>
+          <ul class="hero__verbs load-fade" style="--d:1s" aria-label="Pilares">
+            <li><svg class="i"><use href="#i-search"/></svg><span data-i18n="verb.discover">Descobrir</span></li>
+            <li><svg class="i"><use href="#i-translate"/></svg><span data-i18n="verb.translate">Traduzir</span></li>
+            <li><svg class="i"><use href="#i-share"/></svg><span data-i18n="verb.share">Compartilhar</span></li>
+            <li><svg class="i"><use href="#i-heart"/></svg><span data-i18n="verb.encourage">Incentivar</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" id="heroVisual" data-testid="hero-phone-mockup">
+          <div class="halo" aria-hidden="true"></div>
+          <div class="phone-stage" id="phoneStage">
+            <div class="phone">
+              <div class="phone__island"></div>
+              <div class="phone__screen">
+                <div class="ps-status"><span>9:41</span><span class="ps-status__icons"><i></i><i></i><i></i></span></div>
+                <div class="ps-head">
+                  <div>
+                    <small data-i18n="ps.greet">Bom dia, Ana</small>
+                    <strong data-i18n="ps.today">Hoje no Atlas</strong>
+                  </div>
+                  <svg class="ps-logo"><use href="#logo-mark"/></svg>
+                </div>
+                <div class="ps-card ps-card--news">
+                  <span class="chip chip--gold"><svg class="i"><use href="#i-sun"/></svg><span data-i18n="ps.newsTag">Boa notícia do dia</span></span>
+                  <p data-i18n="ps.newsTitle">Nova terapia apresenta avanços promissores para pacientes com Parkinson.</p>
+                  <div class="ps-reacts"><span>❤️</span><span>🌟</span><span>🤝</span><span>🧠</span><span>🌱</span></div>
+                </div>
+                <div class="ps-card ps-card--mission">
+                  <span class="ps-check"><svg class="i"><use href="#i-check"/></svg></span>
+                  <div><small data-i18n="ps.missionTag">Missão da semana</small><p data-i18n="ps.mission">Agradecer alguém.</p></div>
+                </div>
+                <div class="ps-card ps-card--map">
+                  <div class="ps-globe"><span></span></div>
+                  <div><small data-i18n="ps.mapTag">Mapa da Bondade</small><p><svg class="flag"><use href="#flag-ke"/></svg> <span data-i18n="ps.map">Hoje: Quênia</span></p></div>
+                </div>
+                <div class="ps-card ps-card--quote">
+                  <small><svg class="flag"><use href="#flag-jp"/></svg> <span data-i18n="ps.quoteTag">Japão · traduzido</span></small>
+                  <p data-i18n="comm.jpq">“Pequenos gestos possuem impactos invisíveis.”</p>
+                </div>
+                <div class="ps-tabbar"><i class="on"></i><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="float float--a glass" data-depth="40">
+              <span class="float__emoji">🤝</span>
+              <div><strong data-i18n="float.a1">Ajude Agora</strong><small data-i18n="float.a2">Alguém a 650 m precisa de você</small></div>
+            </div>
+            <div class="float float--b glass" data-depth="-30">
+              <svg class="i i--blue"><use href="#i-translate"/></svg>
+              <div><strong data-i18n="float.b1">Traduzido do japonês</strong><small>小さな行い</small></div>
+            </div>
+            <div class="float float--c glass" data-depth="60">
+              <span class="float__emoji">🌱</span><strong data-i18n="float.c">Transformador</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#missao" class="scroll-cue" data-testid="hero-scroll-cue" aria-label="Rolar"><span></span></a>
+    </section>
+
+    <!-- 2. MISSÃO -->
+    <section class="section mission" id="missao" data-testid="mission-section">
+      <div class="container">
+        <p class="overline reveal" data-i18n="mission.over">02 — Nossa missão</p>
+        <blockquote class="mission__quote" id="missionQuote" data-testid="mission-quote">
+          <span data-i18n="mission.quote" data-words>“Tanto em sociedade, quanto no Atlas, o importante é ajudar, não o tamanho da ajuda.”</span>
+        </blockquote>
+        <div class="mission__body">
+          <p class="lead reveal" data-i18n="mission.p1">O Kindness Atlas nasceu de uma convicção simples: o mundo está cheio de bondade, mas ela raramente vira manchete. Reunimos diariamente histórias reais, avanços da ciência e gestos de pessoas comuns — e os traduzimos para que qualquer pessoa, em qualquer país, possa se inspirar.</p>
+          <div class="pillars">
+            <div class="pillar reveal" style="--d:.05s"><span class="pillar__ic ic--blue"><svg class="i"><use href="#i-search"/></svg></span><h3 data-i18n="pillar.1t">Descobrir</h3><p data-i18n="pillar.1d">Curadoria diária do que há de melhor no mundo.</p></div>
+            <div class="pillar reveal" style="--d:.12s"><span class="pillar__ic ic--green"><svg class="i"><use href="#i-translate"/></svg></span><h3 data-i18n="pillar.2t">Traduzir</h3><p data-i18n="pillar.2d">Bondade sem barreiras de idioma.</p></div>
+            <div class="pillar reveal" style="--d:.19s"><span class="pillar__ic ic--gold"><svg class="i"><use href="#i-share"/></svg></span><h3 data-i18n="pillar.3t">Compartilhar</h3><p data-i18n="pillar.3d">Inspiração que viaja entre culturas.</p></div>
+            <div class="pillar reveal" style="--d:.26s"><span class="pillar__ic ic--rose"><svg class="i"><use href="#i-heart"/></svg></span><h3 data-i18n="pillar.4t">Incentivar</h3><p data-i18n="pillar.4d">Pequenas ações que mudam dias inteiros.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE EDITORIAL -->
+    <div class="marquee" aria-hidden="true" data-testid="editorial-marquee">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span data-i18n="mq.1">Medicina</span><i>✦</i><span class="o" data-i18n="mq.2">Ciência</span><i>✦</i><span data-i18n="mq.3">Tecnologia</span><i>✦</i><span class="o" data-i18n="mq.4">Educação</span><i>✦</i><span data-i18n="mq.5">Meio Ambiente</span><i>✦</i><span class="o" data-i18n="mq.6">Bondade Humana</span><i>✦</i>
+        </div>
+        <div class="marquee__group">
+          <span data-i18n="mq.1">Medicina</span><i>✦</i><span class="o" data-i18n="mq.2">Ciência</span><i>✦</i><span data-i18n="mq.3">Tecnologia</span><i>✦</i><span class="o" data-i18n="mq.4">Educação</span><i>✦</i><span data-i18n="mq.5">Meio Ambiente</span><i>✦</i><span class="o" data-i18n="mq.6">Bondade Humana</span><i>✦</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 + 4. BOA NOTÍCIA DO DIA + VOCÊ SABIA -->
+    <section class="section today" id="hoje" data-testid="today-section">
+      <div class="container">
+        <header class="sec-head">
+          <p class="overline reveal" data-i18n="today.over">03 — Hoje no Atlas</p>
+          <h2 class="h2 reveal" style="--d:.05s" data-i18n="today.title">Comece o dia com o que deu certo.</h2>
+        </header>
+        <div class="bento-today">
+          <article class="card news-card reveal" data-testid="good-news-card">
+            <div class="news-card__art" aria-hidden="true">
+              <svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice">
+                <defs><radialGradient id="nSun" cx="50%" cy="60%" r="60%"><stop offset="0" stop-color="#FDE68A"/><stop offset="1" stop-color="#FFFBEB" stop-opacity="0"/></radialGradient></defs>
+                <rect width="400" height="240" fill="#FFF8E7"/>
+                <circle cx="300" cy="150" r="160" fill="url(#nSun)"/>
+                <g fill="none" stroke="#FBBF24" stroke-width="2" opacity=".6"><circle cx="300" cy="150" r="60"/><circle cx="300" cy="150" r="95"/><circle cx="300" cy="150" r="130"/></g>
+                <path class="pulse-line" d="M0 160 H140 L160 120 L180 200 L200 90 L220 170 L235 150 H400" fill="none" stroke="#2563EB" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="300" cy="150" r="14" fill="#10B981"/>
+              </svg>
+            </div>
+            <div class="news-card__body">
+              <div class="row-between">
+                <span class="chip chip--gold"><svg class="i"><use href="#i-sun"/></svg><span data-i18n="news.tag">Boa Notícia do Dia</span></span>
+                <span class="meta"><svg class="i"><use href="#i-pulse"/></svg><span data-i18n="news.cat">Medicina</span></span>
+              </div>
+              <h3 class="h3" data-i18n="news.title">Nova terapia apresenta avanços promissores para pacientes com Parkinson.</h3>
+              <p data-i18n="news.desc">Pesquisadores relatam resultados encorajadores em estudos clínicos iniciais com uma nova abordagem terapêutica, trazendo esperança renovada para pacientes, famílias e cuidadores em todo o mundo.</p>
+              <div class="row-between wrap">
+                <div class="mini-reacts" aria-label="Reações"><span>❤️</span><span>🌟</span><span>🧠</span></div>
+                <button class="btn btn--text" data-open-modal="article" data-testid="good-news-read-btn"><span data-i18n="cta.read">Ler matéria completa</span><svg class="i"><use href="#i-arrow"/></svg></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card premium-fact reveal" style="--d:.1s" data-testid="did-you-know-card">
+            <div class="premium-fact__shine" aria-hidden="true"></div>
+            <div class="row-between">
+              <span class="chip chip--premium"><svg class="i"><use href="#i-star"/></svg><span>Premium</span></span>
+              <span class="meta meta--light"><svg class="i"><use href="#i-calendar"/></svg><span data-i18n="fact.daily">Diário</span></span>
+            </div>
+            <p class="overline overline--light" data-i18n="fact.over">Você sabia?</p>
+            <p class="premium-fact__text" data-i18n="fact.text">Atualmente existem mais crianças frequentando a escola do que em qualquer outro período da história.</p>
+            <div class="premium-fact__foot">
+              <svg class="i"><use href="#i-grad"/></svg>
+              <span data-i18n="fact.foot">Um novo fato inspirador, todos os dias, para membros Premium.</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. DESTAQUES DA COMUNIDADE -->
+    <section class="section community" id="comunidade" data-testid="community-section">
+      <div class="container">
+        <header class="sec-head sec-head--split">
+          <div>
+            <p class="overline reveal" data-i18n="comm.over">05 — Destaques da comunidade</p>
+            <h2 class="h2 reveal" style="--d:.05s" data-i18n="comm.title">Palavras que atravessam fronteiras.</h2>
+          </div>
+          <p class="muted reveal" style="--d:.1s" data-i18n="comm.desc">Pensamentos compartilhados por pessoas do mundo inteiro, traduzidos automaticamente para o seu idioma.</p>
+        </header>
+        <div class="quotes">
+          <figure class="card quote-card reveal" data-testid="community-card-brasil">
+            <svg class="quote-card__mark"><use href="#i-quote"/></svg>
+            <figcaption class="quote-card__country"><svg class="flag flag--lg"><use href="#flag-br"/></svg><span data-i18n="comm.br">Brasil</span> <span aria-hidden="true">🇧🇷</span></figcaption>
+            <blockquote data-i18n="comm.brq">“Não subestime uma palavra gentil.”</blockquote>
+            <p class="quote-card__orig"><svg class="i"><use href="#i-translate"/></svg><span data-i18n="comm.brorig">Escrito originalmente em português</span></p>
+          </figure>
+          <figure class="card quote-card quote-card--jp reveal" style="--d:.1s" data-testid="community-card-japao">
+            <figcaption class="quote-card__country"><svg class="flag flag--lg"><use href="#flag-jp"/></svg><span data-i18n="comm.jp">Japão</span> <span aria-hidden="true">🇯🇵</span></figcaption>
+            <blockquote data-i18n="comm.jpq">“Pequenos gestos possuem impactos invisíveis.”</blockquote>
+            <p class="quote-card__jp" lang="ja">小さな行いには、目に見えない影響がある。</p>
+            <p class="quote-card__orig"><svg class="i"><use href="#i-translate"/></svg><span data-i18n="comm.jporig">Traduzido do japonês</span></p>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. MISSÕES DA SEMANA -->
+    <section class="section missions" id="missoes" data-testid="missions-section">
+      <div class="container">
+        <header class="sec-head">
+          <p class="overline reveal" data-i18n="mis.over">06 — Missões da semana</p>
+          <h2 class="h2 reveal" style="--d:.05s" data-i18n="mis.title">Pequenas missões. No seu ritmo.</h2>
+          <p class="tags reveal" style="--d:.1s"><span><svg class="i"><use href="#i-ban"/></svg><span data-i18n="mis.noRank">Sem ranking</span></span><span><svg class="i"><use href="#i-ban"/></svg><span data-i18n="mis.noComp">Sem competição</span></span></p>
+        </header>
+        <div class="mission-grid">
+          <button class="card mission-card reveal" data-mission="1" data-testid="mission-card-1" aria-pressed="false">
+            <span class="mission-card__num">01</span>
+            <span class="mission-card__check"><svg class="i"><use href="#i-check"/></svg></span>
+            <span class="mission-card__title" data-i18n="mis.1">Agradecer alguém.</span>
+            <span class="mission-card__hint" data-i18n="mis.1h">Um “obrigado” sincero pode iluminar o dia de alguém.</span>
+          </button>
+          <button class="card mission-card reveal" style="--d:.08s" data-mission="2" data-testid="mission-card-2" aria-pressed="false">
+            <span class="mission-card__num">02</span>
+            <span class="mission-card__check"><svg class="i"><use href="#i-check"/></svg></span>
+            <span class="mission-card__title" data-i18n="mis.2">Doar algo que não utiliza.</span>
+            <span class="mission-card__hint" data-i18n="mis.2h">O que está parado para você pode ser essencial para outra pessoa.</span>
+          </button>
+          <button class="card mission-card reveal" style="--d:.16s" data-mission="3" data-testid="mission-card-3" aria-pressed="false">
+            <span class="mission-card__num">03</span>
+            <span class="mission-card__check"><svg class="i"><use href="#i-check"/></svg></span>
+            <span class="mission-card__title" data-i18n="mis.3">Conversar com alguém que precise de companhia.</span>
+            <span class="mission-card__hint" data-i18n="mis.3h">Ouvir também é uma forma de ajudar.</span>
+          </button>
+        </div>
+        <p class="mission-status reveal" id="missionStatus" data-testid="mission-status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- 7. NESTA SEMANA NA HISTÓRIA -->
+    <section class="section history" id="historia" data-testid="history-section">
+      <div class="container">
+        <article class="history-card reveal" data-testid="history-card">
+          <div class="history-card__date" aria-hidden="true">
+            <span class="history-card__month" data-i18n="hist.month">Outubro</span>
+            <span class="history-card__year">2009</span>
+          </div>
+          <div class="history-card__body">
+            <p class="overline" data-i18n="hist.over">07 — Nesta semana na história</p>
+            <h2 class="h2" data-i18n="hist.title">Em outubro de 2009 foi anunciada uma descoberta médica que beneficiou milhões de pessoas.</h2>
+            <p class="muted" data-i18n="hist.desc">Toda semana, o Arquivo da Bondade revisita um momento em que a humanidade deu um passo à frente. Lembrar o que deu certo é um jeito de acreditar no que ainda pode dar.</p>
+            <a href="#arquivo" class="btn btn--dark" data-testid="history-archive-link"><svg class="i"><use href="#i-archive"/></svg><span data-i18n="hist.cta">Explorar o Arquivo da Bondade</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 8. FEED POSITIVO -->
+    <section class="section feed" id="feed" data-testid="feed-section">
+      <div class="container">
+        <header class="sec-head sec-head--split">
+          <div>
+            <p class="overline reveal" data-i18n="feed.over">08 — Feed positivo</p>
+            <h2 class="h2 reveal" style="--d:.05s" data-i18n="feed.title">Um feed que faz bem.</h2>
+          </div>
+          <p class="muted reveal" style="--d:.1s" data-i18n="feed.desc">Seis editorias, uma só direção: mostrar o progresso humano com rigor, contexto e esperança.</p>
+        </header>
+        <div class="bento-feed">
+          <article class="card feed-card feed-card--xl cat-med reveal" data-testid="feed-card-medicina">
+            <div class="feed-card__art" aria-hidden="true">
+              <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice"><rect width="400" height="200" fill="#EFF6FF"/><g fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round"><path d="M40 110h90l18-36 26 74 24-52 14 14h148" class="pulse-line"/></g><circle cx="320" cy="60" r="34" fill="#DBEAFE"/><path d="M320 44v32M304 60h32" stroke="#2563EB" stroke-width="6" stroke-linecap="round"/></svg>
+            </div>
+            <div class="feed-card__body">
+              <span class="cat"><svg class="i"><use href="#i-pulse"/></svg><span data-i18n="cat.med">Medicina</span></span>
+              <h3 data-i18n="feed.1">Equipes médicas voluntárias levam atendimento a comunidades remotas.</h3>
+              <p data-i18n="feed.1d">Profissionais de saúde dedicam suas férias para atender quem vive longe de hospitais.</p>
+              <button class="btn btn--text" data-open-modal="article" data-testid="feed-read-medicina"><span data-i18n="cta.read">Ler matéria completa</span><svg class="i"><use href="#i-arrow"/></svg></button>
+            </div>
+          </article>
+          <article class="card feed-card cat-sci reveal" style="--d:.06s" data-testid="feed-card-ciencia">
+            <span class="feed-card__icon"><svg class="i"><use href="#i-flask"/></svg></span>
+            <span class="cat"><span data-i18n="cat.sci">Ciência</span></span>
+            <h3 data-i18n="feed.2">Pesquisadores compartilham dados abertos para acelerar descobertas.</h3>
+            <button class="btn btn--text" data-open-modal="article" data-testid="feed-read-ciencia"><span data-i18n="cta.read">Ler matéria completa</span><svg class="i"><use href="#i-arrow"/></svg></button>
+          </article>
+          <article class="card feed-card cat-tech reveal" style="--d:.12s" data-testid="feed-card-tecnologia">
+            <span class="feed-card__icon"><svg class="i"><use href="#i-cpu"/></svg></span>
+            <span class="cat"><span data-i18n="cat.tech">Tecnologia</span></span>
+            <h3 data-i18n="feed.3">Aplicativo de tradução aproxima refugiados de serviços essenciais.</h3>
+            <button class="btn btn--text" data-open-modal="article" data-testid="feed-read-tecnologia"><span data-i18n="cta.read">Ler matéria completa</span><svg class="i"><use href="#i-arrow"/></svg></button>
+          </article>
+          <article class="card feed-card cat-edu reveal" data-testid="feed-card-educacao">
+            <span class="feed-card__icon"><svg class="i"><use href="#i-grad"/></svg></span>
+            <span class="cat"><span data-i18n="cat.edu">Educação</span></span>
+            <h3 data-i18n="feed.4">Bibliotecas comunitárias florescem em bairros periféricos.</h3>
+            <button class="btn btn--text" data-open-modal="article" data-testid="feed-read-educacao"><span data-i18n="cta.read">Ler matéria completa</span><svg class="i"><use href="#i-arrow"/></svg></button>
+          </article>
+          <article class="card feed-card cat-env reveal" style="--d:.06s" data-testid="feed-card-meio-ambiente">
+            <span class="feed-card__icon"><svg class="i"><use href="#i-leaf"/></svg></span>
+            <span class="cat"><span data-i18n="cat.env">Meio Ambiente</span></span>
+            <h3 data-i18n="feed.5">Moradores replantam manguezal e a vida marinha volta a florescer.</h3>
+            <button class="btn btn--text" data-open-modal="article" data-testid="feed-read-meio-ambiente"><span data-i18n="cta.read">Ler matéria completa</span><svg class="i"><use href="#i-arrow"/></svg></button>
+          </article>
+          <article class="card feed-card cat-kind reveal" style="--d:.12s" data-testid="feed-card-bondade">
+            <span class="feed-card__icon"><svg class="i"><use href="#i-hands"/></svg></span>
+            <span class="cat"><span data-i18n="cat.kind">Bondade Humana</span></span>
+            <h3 data-i18n="feed.6">Vizinhos se organizam para cozinhar para idosos que vivem sozinhos.</h3>
+            <button class="btn btn--text" data-open-modal="article" data-testid="feed-read-bondade"><span data-i18n="cta.read">Ler matéria completa</span><svg class="i"><use href="#i-arrow"/></svg></button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. ARQUIVO DA BONDADE -->
+    <section class="section archive" id="arquivo" data-testid="archive-section">
+      <div class="container archive__inner">
+        <div class="archive__intro">
+          <p class="overline reveal" data-i18n="arc.over">09 — Arquivo da Bondade</p>
+          <h2 class="h2 reveal" style="--d:.05s" data-i18n="arc.title">30 anos de boas notícias, em um só lugar.</h2>
+          <p class="muted reveal" style="--d:.1s" data-i18n="arc.desc">Um acervo positivo dos últimos 30 anos. Navegue por décadas, países e categorias e redescubra conquistas que mudaram vidas.</p>
+          <div class="filters reveal" style="--d:.15s" data-testid="archive-filters">
+            <label class="select">
+              <span data-i18n="arc.decade">Década</span>
+              <select id="fDecade" data-testid="archive-filter-decade">
+                <option value="all" data-i18n="arc.all">Todas</option>
+                <option value="1990">1990s</option><option value="2000">2000s</option><option value="2010">2010s</option><option value="2020">2020s</option>
+              </select>
+            </label>
+            <label class="select">
+              <span data-i18n="arc.country">País</span>
+              <select id="fCountry" data-testid="archive-filter-country">
+                <option value="all" data-i18n="arc.allM">Todos</option>
+                <option value="global" data-i18n="arc.global">Global</option>
+                <option value="br" data-i18n="comm.br">Brasil</option>
+                <option value="jp" data-i18n="comm.jp">Japão</option>
+                <option value="ke" data-i18n="arc.ke">Quênia</option>
+              </select>
+            </label>
+            <label class="select">
+              <span data-i18n="arc.category">Categoria</span>
+              <select id="fCategory" data-testid="archive-filter-category">
+                <option value="all" data-i18n="arc.all">Todas</option>
+                <option value="med" data-i18n="cat.med">Medicina</option>
+                <option value="sci" data-i18n="cat.sci">Ciência</option>
+                <option value="tech" data-i18n="cat.tech">Tecnologia</option>
+                <option value="edu" data-i18n="cat.edu">Educação</option>
+                <option value="env" data-i18n="cat.env">Meio Ambiente</option>
+                <option value="kind" data-i18n="cat.kind">Bondade Humana</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="archive__list reveal" style="--d:.1s">
+          <ul id="archiveList" data-testid="archive-list">
+            <li data-decade="1990" data-country="global" data-cat="sci"><span class="yr">1990s</span><span data-i18n="arc.i1">Cooperação científica internacional une pesquisadores de dezenas de países.</span></li>
+            <li data-decade="1990" data-country="jp" data-cat="edu"><span class="yr">1990s</span><span data-i18n="arc.i2">Escolas comunitárias ampliam o acesso à educação para adultos.</span></li>
+            <li data-decade="2000" data-country="br" data-cat="kind"><span class="yr">2000s</span><span data-i18n="arc.i3">Redes de doação de alimentos se espalham por cidades brasileiras.</span></li>
+            <li data-decade="2000" data-country="global" data-cat="med"><span class="yr">2009</span><span data-i18n="arc.i4">Descoberta médica anunciada em outubro beneficia milhões de pessoas.</span></li>
+            <li data-decade="2000" data-country="ke" data-cat="tech"><span class="yr">2000s</span><span data-i18n="arc.i5">Pagamentos pelo celular ampliam a inclusão financeira.</span></li>
+            <li data-decade="2010" data-country="jp" data-cat="kind"><span class="yr">2010s</span><span data-i18n="arc.i6">Voluntários ajudam a reconstruir comunidades após desastre natural.</span></li>
+            <li data-decade="2010" data-country="ke" data-cat="env"><span class="yr">2010s</span><span data-i18n="arc.i7">Mulheres lideram o plantio de milhões de árvores.</span></li>
+            <li data-decade="2020" data-country="global" data-cat="sci"><span class="yr">2020s</span><span data-i18n="arc.i8">Colaboração científica global acelera o desenvolvimento de vacinas.</span></li>
+            <li data-decade="2020" data-country="br" data-cat="env"><span class="yr">2020s</span><span data-i18n="arc.i9">Comunidades locais lideram projetos de reflorestamento.</span></li>
+          </ul>
+          <p class="archive__empty" id="archiveEmpty" data-testid="archive-empty" hidden data-i18n="arc.empty">Nenhum registro para esta combinação — tente outro filtro.</p>
+          <p class="archive__note" data-i18n="arc.note">Exemplos ilustrativos do acervo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. MAPA DA BONDADE -->
+    <section class="section map" id="mapa" data-testid="map-section">
+      <div class="container">
+        <div class="map-card reveal">
+          <div class="map-card__globe" aria-hidden="true">
+            <svg viewBox="0 0 400 400" class="globe">
+              <defs>
+                <radialGradient id="gFill" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#DBEAFE"/></radialGradient>
+                <clipPath id="gClip"><circle cx="200" cy="200" r="170"/></clipPath>
+              </defs>
+              <circle cx="200" cy="200" r="170" fill="url(#gFill)" stroke="#BFDBFE" stroke-width="1.5"/>
+              <g clip-path="url(#gClip)" fill="none" stroke="#93C5FD" stroke-width="1" opacity=".8">
+                <ellipse cx="200" cy="200" rx="170" ry="40"/><ellipse cx="200" cy="200" rx="170" ry="95"/><ellipse cx="200" cy="200" rx="170" ry="140"/>
+                <line x1="30" y1="200" x2="370" y2="200"/>
+                <ellipse class="mer m1" cx="200" cy="200" rx="40" ry="170"/>
+                <ellipse class="mer m2" cx="200" cy="200" rx="100" ry="170"/>
+                <ellipse class="mer m3" cx="200" cy="200" rx="150" ry="170"/>
+              </g>
+              <g clip-path="url(#gClip)" fill="#10B981" opacity=".18">
+                <path d="M190 120c20-10 48-6 60 10s4 34 14 52 6 44-10 62-26 40-42 36-12-30-22-48-26-26-22-50 2-52 22-62z"/>
+                <path d="M80 110c24-14 50-4 54 14s-14 26-10 44-20 30-34 18-30-62-10-76z"/>
+              </g>
+              <g class="pins">
+                <g class="pin pin--main" transform="translate(238 222)"><circle r="22" class="pin__ring"/><circle r="8" fill="#2563EB" stroke="#fff" stroke-width="3"/></g>
+                <g class="pin" transform="translate(110 150)"><circle r="14" class="pin__ring pin__ring--g"/><circle r="5" fill="#10B981" stroke="#fff" stroke-width="2"/></g>
+                <g class="pin" transform="translate(290 130)"><circle r="14" class="pin__ring pin__ring--y"/><circle r="5" fill="#FBBF24" stroke="#fff" stroke-width="2"/></g>
+              </g>
+            </svg>
+            <div class="map-card__label glass"><svg class="flag"><use href="#flag-ke"/></svg><span>Nairobi</span></div>
+          </div>
+          <div class="map-card__content">
+            <p class="overline" data-i18n="map.over">10 — Mapa da Bondade</p>
+            <h2 class="h2"><span data-i18n="map.today">Hoje:</span> <span data-i18n="arc.ke">Quênia</span> <span aria-hidden="true">🇰🇪</span></h2>
+            <p class="muted" data-i18n="map.desc">Todos os dias, um país em destaque. Explore o que pessoas, comunidades e cientistas estão construindo por lá.</p>
+            <div class="tabs" role="tablist" data-testid="map-tabs">
+              <button class="tab is-active" role="tab" aria-selected="true" data-tab="0" data-testid="map-tab-projetos"><span data-i18n="map.t1">Projetos sociais</span></button>
+              <button class="tab" role="tab" aria-selected="false" data-tab="1" data-testid="map-tab-historias"><span data-i18n="map.t2">Histórias inspiradoras</span></button>
+              <button class="tab" role="tab" aria-selected="false" data-tab="2" data-testid="map-tab-ciencia"><span data-i18n="map.t3">Avanços científicos</span></button>
+            </div>
+            <div class="tab-panels" data-testid="map-tab-panels">
+              <div class="tab-panel is-active" data-panel="0"><span class="tab-panel__ic ic--green"><svg class="i"><use href="#i-hands"/></svg></span><p data-i18n="map.p1">Cooperativas de mulheres em comunidades rurais ampliam a renda com artesanato e agricultura sustentável.</p></div>
+              <div class="tab-panel" data-panel="1"><span class="tab-panel__ic ic--gold"><svg class="i"><use href="#i-book"/></svg></span><p data-i18n="map.p2">Um professor percorre quilômetros todos os dias para garantir aulas a crianças de vilarejos distantes.</p></div>
+              <div class="tab-panel" data-panel="2"><span class="tab-panel__ic ic--blue"><svg class="i"><use href="#i-flask"/></svg></span><p data-i18n="map.p3">Pesquisadores locais desenvolvem soluções solares de baixo custo para irrigação de pequenas propriedades.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. AJUDE AGORA -->
+    <section class="section help" id="ajude-agora" data-testid="help-now-section">
+      <div class="help__glow" aria-hidden="true"></div>
+      <div class="container help__inner">
+        <div class="help__copy">
+          <p class="overline overline--light reveal" data-i18n="help.over">11 — Ajude Agora</p>
+          <h2 class="help__title reveal" style="--d:.05s" data-i18n="help.title">Quem precisa de ajuda, encontra quem quer ajudar.</h2>
+          <p class="help__lead reveal" style="--d:.1s" data-i18n="help.lead">O Ajude Agora conecta pessoas que precisam de ajuda com pessoas dispostas a ajudar — perto, de forma segura e no momento certo.</p>
+
+          <div class="modes reveal" style="--d:.15s" role="tablist" data-testid="help-modes">
+            <button class="mode is-active" data-mode="1" data-testid="help-mode-individual"><span class="mode__emoji">👤</span><span data-i18n="help.m1">Individual</span></button>
+            <button class="mode" data-mode="2" data-testid="help-mode-dupla"><span class="mode__emoji">👥</span><span data-i18n="help.m2">Dupla</span></button>
+            <button class="mode" data-mode="3" data-testid="help-mode-grupo"><span class="mode__emoji">🤝</span><span data-i18n="help.m3">Grupo</span></button>
+          </div>
+          <p class="mode-desc" id="modeDesc" data-testid="help-mode-desc" aria-live="polite"></p>
+
+          <ul class="help-features">
+            <li class="reveal"><span class="hf__ic"><svg class="i"><use href="#i-nav"/></svg></span><div><strong data-i18n="help.f1">Distância automática</strong><small data-i18n="help.f1d">Veja na hora quão perto você está.</small></div></li>
+            <li class="reveal" style="--d:.06s"><span class="hf__ic"><svg class="i"><use href="#i-landmark"/></svg></span><div><strong data-i18n="help.f2">Pontos de referência</strong><small data-i18n="help.f2d">Encontros em locais públicos e conhecidos.</small></div></li>
+            <li class="reveal" style="--d:.12s"><span class="hf__ic"><svg class="i"><use href="#i-chat"/></svg></span><div><strong data-i18n="help.f3">Chat temporário</strong><small data-i18n="help.f3d">Conversa que expira ao fim da ajuda.</small></div></li>
+            <li class="reveal" style="--d:.18s"><span class="hf__ic hf__ic--red"><svg class="i"><use href="#i-siren"/></svg></span><div><strong data-i18n="help.f4">Botão de emergência</strong><small data-i18n="help.f4d">Acesso imediato a ajuda oficial.</small></div></li>
+          </ul>
+        </div>
+
+        <div class="help__sim reveal" style="--d:.1s" data-testid="help-simulator">
+          <div class="sim">
+            <div class="sim__top">
+              <span class="chip chip--green"><span class="dot-live dot-live--g"></span><span data-i18n="sim.live">Pedido próximo</span></span>
+              <span class="sim__mode" id="simMode" data-testid="help-sim-mode">👤 Individual</span>
+            </div>
+            <p class="sim__req" id="simReq" data-testid="help-sim-request">“Preciso de ajuda para levar compras até o 3º andar.”</p>
+            <div class="sim__map" aria-hidden="true">
+              <svg viewBox="0 0 320 150" preserveAspectRatio="xMidYMid slice">
+                <rect width="320" height="150" fill="#0F1B33"/>
+                <g stroke="#1E3A8A" stroke-width="10" stroke-linecap="round" opacity=".7"><path d="M-10 40H330M-10 110H330M70-10V160M210-10V160"/></g>
+                <g stroke="#6EE7B7" stroke-width="2.5" stroke-dasharray="4 6" fill="none"><path d="M70 110 C120 110, 150 40, 210 40"/></g>
+                <circle cx="70" cy="110" r="9" fill="#2563EB" stroke="#fff" stroke-width="3"/>
+                <circle cx="210" cy="40" r="22" fill="#10B981" opacity=".18" class="sim-pulse"/>
+                <circle cx="210" cy="40" r="9" fill="#10B981" stroke="#fff" stroke-width="3"/>
+                <rect x="232" y="88" width="64" height="40" rx="8" fill="#1E293B"/><path d="M246 118v-14M256 118v-14M266 118v-14M276 118v-14M242 104h40l-20-8z" stroke="#FBBF24" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <div class="sim__stats">
+              <div><small data-i18n="sim.dist">Distância</small><strong id="simDistance" data-testid="help-sim-distance">650 m</strong></div>
+              <div><small data-i18n="sim.ref">Ponto de referência</small><strong data-i18n="sim.refv">Praça Central</strong></div>
+              <div><small data-i18n="sim.helpers">Disponíveis</small><strong id="simHelpers" data-testid="help-sim-helpers">8</strong></div>
+            </div>
+            <label class="range">
+              <span><span data-i18n="sim.radius">Raio de busca</span> <b id="radiusVal">1 km</b></span>
+              <input type="range" min="1" max="10" value="1" id="radiusInput" data-testid="help-sim-radius">
+            </label>
+            <div class="sim__chat" data-testid="help-sim-chat">
+              <div class="sim__chat-head"><svg class="i"><use href="#i-chat"/></svg><span data-i18n="sim.chat">Chat temporário</span><span class="sim__timer"><svg class="i"><use href="#i-clock"/></svg><span id="chatTimer">59:59</span></span></div>
+              <p class="bubble bubble--in" data-i18n="sim.b1">Olá! Estou na Praça Central, de camiseta azul.</p>
+              <p class="bubble bubble--out" data-i18n="sim.b2">Perfeito, chego em 5 minutos. 🙂</p>
+            </div>
+            <button class="sos" id="sosBtn" data-testid="help-sim-emergency-btn"><svg class="i"><use href="#i-siren"/></svg><span data-i18n="sim.sos">Botão de emergência</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. TRANSPARÊNCIA -->
+    <section class="section safety" id="seguranca" data-testid="safety-section">
+      <div class="container">
+        <div class="safety-card reveal">
+          <div class="safety-card__head">
+            <span class="safety-card__badge"><svg class="i"><use href="#i-shield"/></svg></span>
+            <p class="overline" data-i18n="safe.over">12 — Transparência</p>
+            <h2 class="h2" data-i18n="safe.title">Segurança em Primeiro Lugar</h2>
+          </div>
+          <div class="safety-card__grid">
+            <div class="safety-card__text">
+              <p class="lead" data-i18n="safe.p1">O Ajude Agora está temporariamente disponível apenas para usuários Premium.</p>
+              <p data-i18n="safe.p2">Essa decisão não foi tomada como estratégia de monetização.</p>
+              <p data-i18n="safe.p3">Ela existe para permitir que o Kindness Atlas desenvolva, teste e valide mecanismos avançados de proteção da comunidade.</p>
+              <div class="roadmap" data-testid="safety-roadmap">
+                <div class="roadmap__step is-now"><span class="roadmap__dot"></span><small data-i18n="safe.now">Hoje</small><strong data-i18n="safe.nowv">Premium · fase de validação</strong></div>
+                <div class="roadmap__bar"><span></span></div>
+                <div class="roadmap__step"><span class="roadmap__dot roadmap__dot--g"></span><small data-i18n="safe.goal">Objetivo futuro</small><strong data-i18n="safe.goalv">Gratuito para todos</strong></div>
+              </div>
+            </div>
+            <ul class="checks" data-testid="safety-checks">
+              <li><span class="checks__ic"><svg class="i"><use href="#i-phone"/></svg></span><span data-i18n="safe.c1">Verificação de telefone</span><svg class="i checks__ok"><use href="#i-check"/></svg></li>
+              <li><span class="checks__ic"><svg class="i"><use href="#i-face"/></svg></span><span data-i18n="safe.c2">Verificação facial</span><svg class="i checks__ok"><use href="#i-check"/></svg></li>
+              <li><span class="checks__ic"><svg class="i"><use href="#i-shield-alert"/></svg></span><span data-i18n="safe.c3">Sistemas antifraude</span><svg class="i checks__ok"><use href="#i-check"/></svg></li>
+              <li><span class="checks__ic"><svg class="i"><use href="#i-eye"/></svg></span><span data-i18n="safe.c4">Monitoramento de atividades suspeitas</span><svg class="i checks__ok"><use href="#i-check"/></svg></li>
+              <li><span class="checks__ic"><svg class="i"><use href="#i-tool"/></svg></span><span data-i18n="safe.c5">Ferramentas avançadas de segurança</span><svg class="i checks__ok"><use href="#i-check"/></svg></li>
+            </ul>
+          </div>
+          <p class="safety-card__quote" data-testid="safety-quote"><svg class="i"><use href="#i-heart"/></svg><span data-i18n="safe.quote">“Queremos que a ajuda seja acessível a todos.”</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. COMUNIDADE PREMIUM -->
+    <section class="section premium" id="premium" data-testid="premium-section">
+      <div class="container premium__inner">
+        <div class="premium__intro">
+          <p class="overline reveal" data-i18n="prem.over">13 — Comunidade Premium</p>
+          <h2 class="h2 reveal" style="--d:.05s" data-i18n="prem.title">Para quem quer ir além da inspiração.</h2>
+          <p class="muted reveal" style="--d:.1s" data-i18n="prem.desc">Apoie a missão e desbloqueie recursos que transformam o Atlas em parte da sua rotina.</p>
+          <button class="btn btn--gold btn--lg reveal" style="--d:.15s" data-open-modal="waitlist" data-testid="premium-waitlist-btn"><svg class="i"><use href="#i-star"/></svg><span data-i18n="cta.waitlist">Entrar na Lista de Desejo</span></button>
+        </div>
+        <ul class="benefits" data-testid="premium-benefits">
+          <li class="benefit benefit--hl reveal"><span class="benefit__ic"><svg class="i"><use href="#i-hands"/></svg></span><span data-i18n="prem.b1">Ajude Agora (temporariamente Premium)</span></li>
+          <li class="benefit reveal" style="--d:.04s"><span class="benefit__ic"><svg class="i"><use href="#i-sparkles"/></svg></span><span data-i18n="prem.b2">Você Sabia diário</span></li>
+          <li class="benefit reveal" style="--d:.08s"><span class="benefit__ic"><svg class="i"><use href="#i-sun"/></svg></span><span data-i18n="prem.b3">2 pensamentos positivos por dia</span></li>
+          <li class="benefit reveal" style="--d:.12s"><span class="benefit__ic"><svg class="i"><use href="#i-compass"/></svg></span><span data-i18n="prem.b4">Explorar qualquer país</span></li>
+          <li class="benefit reveal" style="--d:.16s"><span class="benefit__ic"><svg class="i"><use href="#i-book"/></svg></span><span data-i18n="prem.b5">Biblioteca pessoal</span></li>
+          <li class="benefit reveal" style="--d:.2s"><span class="benefit__ic"><svg class="i"><use href="#i-send"/></svg></span><span data-i18n="prem.b6">Cartas para o Futuro</span></li>
+          <li class="benefit reveal" style="--d:.24s"><span class="benefit__ic"><svg class="i"><use href="#i-headphones"/></svg></span><span data-i18n="prem.b7">Narração de notícias</span></li>
+          <li class="benefit reveal" style="--d:.28s"><span class="benefit__ic"><svg class="i"><use href="#i-mail"/></svg></span><span data-i18n="prem.b8">Resumo semanal positivo</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 14. REAÇÕES OFICIAIS -->
+    <section class="section reactions" id="reacoes" data-testid="reactions-section">
+      <div class="container">
+        <header class="sec-head sec-head--center">
+          <p class="overline reveal" data-i18n="react.over">14 — Reações oficiais</p>
+          <h2 class="h2 reveal" style="--d:.05s" data-i18n="react.title">Reaja com significado.</h2>
+          <p class="muted reveal" style="--d:.1s" data-i18n="react.desc">Toque em uma reação e sinta a diferença.</p>
+        </header>
+        <div class="react-row reveal" style="--d:.1s" data-testid="reactions-row">
+          <button class="react" data-testid="reaction-inspirador" aria-pressed="false"><span class="react__emoji">❤️</span><span data-i18n="react.1">Inspirador</span></button>
+          <button class="react" data-testid="reaction-admiravel" aria-pressed="false"><span class="react__emoji">🌟</span><span data-i18n="react.2">Admirável</span></button>
+          <button class="react" data-testid="reaction-bondade" aria-pressed="false"><span class="react__emoji">🤝</span><span data-i18n="react.3">Bondade</span></button>
+          <button class="react" data-testid="reaction-inteligente" aria-pressed="false"><span class="react__emoji">🧠</span><span data-i18n="react.4">Inteligente</span></button>
+          <button class="react" data-testid="reaction-transformador" aria-pressed="false"><span class="react__emoji">🌱</span><span data-i18n="react.5">Transformador</span></button>
+        </div>
+        <ul class="no-list reveal" style="--d:.15s" data-testid="reactions-no-list">
+          <li><svg class="i"><use href="#i-ban"/></svg><span data-i18n="react.n1">Sem curtidas tradicionais</span></li>
+          <li><svg class="i"><use href="#i-ban"/></svg><span data-i18n="react.n2">Sem dislikes</span></li>
+          <li><svg class="i"><use href="#i-ban"/></svg><span data-i18n="react.n3">Sem rankings</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 15. PRINCÍPIOS -->
+    <section class="section principles" id="principios" data-testid="principles-section">
+      <div class="container">
+        <header class="sec-head">
+          <p class="overline reveal" data-i18n="prin.over">15 — Princípios</p>
+          <h2 class="h2 reveal" style="--d:.05s" data-i18n="prin.title">O que nos guia, todos os dias.</h2>
+        </header>
+        <div class="prin-grid">
+          <article class="prin reveal"><span class="prin__num">01</span><span class="prin__ic ic--blue"><svg class="i"><use href="#i-heart"/></svg></span><h3 data-i18n="prin.1">Todo bem importa</h3></article>
+          <article class="prin reveal" style="--d:.05s"><span class="prin__num">02</span><span class="prin__ic ic--green"><svg class="i"><use href="#i-hands"/></svg></span><h3 data-i18n="prin.2">Bondade não é competição</h3></article>
+          <article class="prin reveal" style="--d:.1s"><span class="prin__num">03</span><span class="prin__ic ic--gold"><svg class="i"><use href="#i-sun"/></svg></span><h3 data-i18n="prin.3">Inspirar vale mais que viralizar</h3></article>
+          <article class="prin reveal"><span class="prin__num">04</span><span class="prin__ic ic--blue"><svg class="i"><use href="#i-link"/></svg></span><h3 data-i18n="prin.4">Tecnologia deve aproximar pessoas</h3></article>
+          <article class="prin reveal" style="--d:.05s"><span class="prin__num">05</span><span class="prin__ic ic--green"><svg class="i"><use href="#i-target"/></svg></span><h3 data-i18n="prin.5">Impacto vale mais que popularidade</h3></article>
+          <article class="prin reveal" style="--d:.1s"><span class="prin__num">06</span><span class="prin__ic ic--gold"><svg class="i"><use href="#i-globe"/></svg></span><h3 data-i18n="prin.6">O importante é ajudar, não o tamanho da ajuda</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16. CTA FINAL -->
+    <section class="section cta" id="cta" data-testid="final-cta-section">
+      <div class="container">
+        <div class="cta-card reveal">
+          <svg class="cta-card__rings" viewBox="0 0 600 600" aria-hidden="true"><g fill="none" stroke="#fff" stroke-opacity=".14"><circle cx="300" cy="300" r="120"/><circle cx="300" cy="300" r="190"/><circle cx="300" cy="300" r="260"/><ellipse cx="300" cy="300" rx="90" ry="260"/><ellipse cx="300" cy="300" rx="180" ry="260"/></g></svg>
+          <svg class="cta-card__mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+          <h2 class="cta-card__title" data-i18n="cta.title">Junte-se à maior plataforma dedicada a mostrar o melhor da humanidade.</h2>
+          <div class="cta-card__btns">
+            <button class="btn btn--white btn--lg magnetic" data-open-modal="download" data-testid="final-download-btn"><svg class="i"><use href="#i-download"/></svg><span data-i18n="cta.download">Baixar Aplicativo</span></button>
+            <button class="btn btn--outline-white btn--lg magnetic" data-open-modal="waitlist" data-testid="final-waitlist-btn"><span data-i18n="cta.waitlist">Entrar na Lista de Desejo</span><svg class="i"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 17. RODAPÉ -->
+  <footer class="footer" data-testid="site-footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#top" class="brand" data-testid="footer-logo-link">
+          <svg class="brand__mark"><use href="#logo-mark"/></svg>
+          <span class="brand__text"><strong>Kindness Atlas™</strong><small data-i18n="foot.local">Atlas da Bondade</small></span>
+        </a>
+        <p class="footer__tag" data-i18n="foot.tag">Veja diariamente o melhor da humanidade.</p>
+      </div>
+      <div class="footer__mission">
+        <p class="overline" data-i18n="foot.mission">Missão</p>
+        <p class="footer__quote" data-i18n="mission.quote">“Tanto em sociedade, quanto no Atlas, o importante é ajudar, não o tamanho da ajuda.”</p>
+      </div>
+      <nav class="footer__links" aria-label="Rodapé">
+        <a href="#feed" data-testid="footer-link-feed" data-i18n="nav.feed">Feed Positivo</a>
+        <a href="#arquivo" data-testid="footer-link-arquivo" data-i18n="foot.archive">Arquivo da Bondade</a>
+        <a href="#ajude-agora" data-testid="footer-link-ajude" data-i18n="nav.help">Ajude Agora</a>
+        <a href="#seguranca" data-testid="footer-link-seguranca" data-i18n="foot.safety">Segurança</a>
+        <a href="#premium" data-testid="footer-link-premium" data-i18n="nav.premium">Premium</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <small>© <span id="year">2026</span> Kindness Atlas™. <span data-i18n="foot.rights">Todos os direitos reservados.</span></small>
+      <small data-i18n="foot.note">Conteúdos exibidos nesta página são ilustrativos.</small>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal" aria-hidden="true" data-testid="waitlist-modal">
+    <div class="modal__backdrop" data-close-modal data-testid="waitlist-modal-backdrop"></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" data-close-modal aria-label="Fechar" data-testid="waitlist-modal-close-btn"><svg class="i"><use href="#i-x"/></svg></button>
+      <div class="modal__form" id="modalForm">
+        <svg class="modal__mark"><use href="#logo-mark"/></svg>
+        <h3 id="modalTitle" data-testid="waitlist-modal-title">Entre na Lista de Desejo</h3>
+        <p id="modalText" class="muted">Seja uma das primeiras pessoas a ver o melhor da humanidade, todos os dias.</p>
+        <!-- FORMSPREE: endereço do formulário que recebe as inscrições -->
+        <form id="waitlistForm" action="https://formspree.io/f/xljjdryq" method="POST" novalidate data-testid="waitlist-form">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <label class="field">
+            <span data-i18n="modal.email">Seu melhor e-mail</span>
+            <input type="email" id="emailInput" name="email" required autocomplete="email" data-i18n-ph="modal.ph" placeholder="voce@email.com" data-testid="waitlist-email-input">
+          </label>
+          <div class="platforms" role="radiogroup" aria-label="Plataforma">
+            <label><input type="radio" name="platform" value="android" checked data-testid="waitlist-platform-android"><span>Android</span></label>
+          </div>
+          <p class="field__error" id="emailError" role="alert" data-testid="waitlist-email-error"></p>
+          <button type="submit" class="btn btn--primary btn--lg btn--block" data-testid="waitlist-submit-btn"><span data-i18n="modal.submit">Quero participar</span><svg class="i"><use href="#i-arrow"/></svg></button>
+          <p class="modal__fine" data-i18n="modal.fine">Usamos seu e-mail apenas para avisar sobre o lançamento. Sem spam.</p>
+        </form>
+      </div>
+      <div class="modal__success" id="modalSuccess" hidden data-testid="waitlist-success">
+        <span class="success-burst"><svg class="i"><use href="#i-check"/></svg></span>
+        <h3 data-i18n="modal.okTitle">Você está na lista!</h3>
+        <p class="muted" data-i18n="modal.okText">Obrigado por fazer parte. Avisaremos assim que o Kindness Atlas estiver disponível.</p>
+        <button class="btn btn--dark" data-close-modal data-testid="waitlist-success-close-btn"><span data-i18n="modal.close">Fechar</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" data-testid="toast"></div>
+
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
